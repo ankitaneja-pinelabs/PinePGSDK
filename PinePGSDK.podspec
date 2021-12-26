@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = 'PinePGSDK'
-  spec.version      = '0.1.2'
+  spec.version      = '0.1.0'
   spec.license      = "MIT"
   spec.homepage     = 'https://github.com/ankitaneja-pinelabs/PinePGSDK'
   spec.authors      = { 'Ankit Aneja' => 'ankit.aneja@pinelabs.com' }
