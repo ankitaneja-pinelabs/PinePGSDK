@@ -1,0 +1,11 @@
+framework module PinePGSDK {
+  umbrella header "PinePGSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module PinePGSDK.Swift {
+    header "PinePGSDK-Swift.h"
+    requires objc
+}

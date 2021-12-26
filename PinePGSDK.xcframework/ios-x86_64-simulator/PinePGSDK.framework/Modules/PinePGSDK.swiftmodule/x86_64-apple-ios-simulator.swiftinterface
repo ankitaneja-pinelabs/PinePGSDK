@@ -1,0 +1,467 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.2 effective-4.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name PinePGSDK
+import CommonCrypto
+import Foundation
+import Network
+@_exported import PinePGSDK
+import QuartzCore
+import Swift
+import SystemConfiguration
+import UIKit.UIGestureRecognizerSubclass
+import UIKit
+import WebKit
+@_hasMissingDesignatedInitializers final public class Toas {
+  final public var backgroundColor: UIKit.UIColor
+  final public var font: UIKit.UIFont
+  final public var textColor: UIKit.UIColor
+  final public var textInsets: UIKit.UIEdgeInsets
+  final public var cornerRadius: CoreGraphics.CGFloat
+  final public var bottomPadding: CoreGraphics.CGFloat
+  final public var minimumHorizontalPadding: CoreGraphics.CGFloat
+  final public var duration: CoreGraphics.CGFloat
+  public static let `default`: PinePGSDK.Toas
+  final public func show(text: Swift.String, duration: Swift.Double)
+  final public func dismiss(animated: Swift.Bool, completion: (() -> Swift.Void)? = nil)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class PinePGConstants : ObjectiveC.NSObject {
+  public static let THEME_ID: Swift.String
+  public static let IS_HEADER_TO_BE_SHOW: Swift.String
+  public static let THEME_DEFAULT: Swift.Int
+  public static let IS_HEADER_TO_BE_SHOW_VALUE: Swift.Bool
+  public static let NO_THEME_PRESENT: Swift.Int
+  public static let PostFormID: Swift.String
+  public static let REQUEST_CODE_PAYMENT: Swift.Int
+  public static let CANCEL_TRANSACTION: Swift.String
+  public static let ALERT_MESSAGE: Swift.String
+  public static let Timeout: Swift.String
+  public static let SERVER_NOT_FOUND: Swift.String
+  public static let URL_NOT_FOUND: Swift.String
+  public static var MY_PERMISSIONS_REQUEST_RECEIVE_SMS: Swift.Int
+  public static let NO_INTERNET: Swift.String
+  public static let INTERNET: Swift.String
+  public static let LOINACTION: Swift.String
+  public static let ACTIVITY_INDICATOR_VIEW_TEXT: Swift.String
+  public static let ZOOM_IN_DISABLE: Swift.String
+  public static let PINE_PG_PAYMENT_URL_TEST_SANDBOX: Swift.String
+  public static let PINE_PG_RETURN_URL_TEST_SANDBOX: Swift.String
+  public static let PINE_PG_PAYMENT_URL_PRODUCTION: Swift.String
+  public static let PINE_PG_RETURN_URL_PRODUCTION: Swift.String
+  public static let PINE_PG_PAYMENT_URL_SANDBOX: Swift.String
+  public static let PINE_PG_RETURN_URL_SANDBOX: Swift.String
+  public static let HDFC_URL: Swift.String
+  public static let SBI_URL: Swift.String
+  public static let PNB_URL: Swift.String
+  public static let ALLAHABAD_URL: Swift.String
+  public static let RC_INTERNET_NOT_CONNECTED: Swift.Int
+  public static let RC_FAILURE: Swift.Int
+  public static var internet_connection: Swift.Bool
+  public static let RM_INTERNET_NOT_CONNECTED: Swift.String
+  public static let RM_FAILURE: Swift.String
+  public static let IS_PRODUCTION_REQUEST: Swift.String
+  public static let REQUEST_AGENT_ANDROID_APP: Swift.String
+  public static let EXCEPTON_OCCUR: Swift.String
+  public static let HTTP_ERROR: Swift.String
+  public static let PINE_PG_RETURN_URL: Swift.String
+  public static let FORM_POST_MERCHANT_RETURN_URL_TAG: Swift.String
+  public static let BACK_PRESS_BUTTON: Swift.String
+  @objc deinit
+  @objc override dynamic public init()
+}
+public enum iProgressHUDStyles {
+  case vertical
+  case horizontal
+  public static func == (a: PinePGSDK.iProgressHUDStyles, b: PinePGSDK.iProgressHUDStyles) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+open class iProgressHUD {
+  open var indicatorStyle: PinePGSDK.NVActivityIndicatorType
+  open var iprogressStyle: PinePGSDK.iProgressHUDStyles
+  open var indicatorView: PinePGSDK.NVActivityIndicatorView!
+  final public let modalView: UIKit.UIImageView
+  final public let boxView: UIKit.UIImageView!
+  final public let captionView: UIKit.UILabel!
+  open var indicatorSize: CoreGraphics.CGFloat
+  open var alphaModal: CoreGraphics.CGFloat
+  open var alphaBox: CoreGraphics.CGFloat
+  open var boxSize: CoreGraphics.CGFloat
+  open var boxCorner: CoreGraphics.CGFloat
+  open var captionDistance: CoreGraphics.CGFloat
+  open var isShowCaption: Swift.Bool
+  open var isShowModal: Swift.Bool
+  open var isShowBox: Swift.Bool
+  open var isBlurModal: Swift.Bool
+  open var isBlurBox: Swift.Bool
+  open var isTouchDismiss: Swift.Bool
+  open var modalColor: UIKit.UIColor
+  open var boxColor: UIKit.UIColor
+  open var captionColor: UIKit.UIColor
+  open var indicatorColor: UIKit.UIColor
+  open var captionSize: CoreGraphics.CGFloat
+  open var delegete: PinePGSDK.iProgressHUDDelegete?
+  public init()
+  public init(style: PinePGSDK.NVActivityIndicatorType)
+  public static func sharedInstance() -> PinePGSDK.iProgressHUD
+  open func attachProgress(toViews: UIKit.UIView...)
+  open func attachProgress(toViews: [UIKit.UIView])
+  open func attachProgress(toView: UIKit.UIView)
+  open func isShowing() -> Swift.Bool
+  open func show()
+  open func dismiss()
+  @objc deinit
+}
+@objc public class DismissalAnimator : UIKit.UIPercentDrivenInteractiveTransition, UIKit.UIViewControllerAnimatedTransitioning {
+  public init(manager: PinePGSDK.HalfSheetPresentationManager)
+  @objc public func transitionDuration(using transitionContext: UIKit.UIViewControllerContextTransitioning?) -> Foundation.TimeInterval
+  @objc public func interruptibleAnimator(using transitionContext: UIKit.UIViewControllerContextTransitioning) -> UIKit.UIViewImplicitlyAnimating
+  @objc public func animateTransition(using transitionContext: UIKit.UIViewControllerContextTransitioning)
+  @objc override dynamic public func cancel()
+  @objc override dynamic public func finish()
+  @objc override dynamic public func update(_ percentComplete: CoreGraphics.CGFloat)
+  @objc deinit
+  @objc override dynamic public init()
+}
+extension UIView {
+  public func showProgress()
+  public func dismissProgress()
+  public func updateIndicator(style: PinePGSDK.NVActivityIndicatorType)
+  public func updateCaption(text: Swift.String)
+  public func updateColors(modalColor: UIKit.UIColor?, boxColor: UIKit.UIColor?, indicatorColor: UIKit.UIColor?, captionColor: UIKit.UIColor?)
+}
+@objc @_inheritsConvenienceInitializers public class DismissBarVC : UIKit.UIViewController {
+  public static func instance(tintColor: UIKit.UIColor) -> PinePGSDK.DismissBarVC
+  @objc deinit
+  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+public protocol IPinePGResponseCallback {
+  func internetNotAvailable(code: Swift.Int, message: Swift.String)
+  func onErrorOccured(code: Swift.Int, message: Swift.String)
+  func onTransactionResponse()
+  func onCancelTxn(code: Swift.Int, message: Swift.String)
+  func onPressedBackButton(code: Swift.Int, message: Swift.String)
+}
+public enum HalfSheetTopVCTransitionStyle {
+  case slide
+  case fade
+  public static func == (a: PinePGSDK.HalfSheetTopVCTransitionStyle, b: PinePGSDK.HalfSheetTopVCTransitionStyle) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum DismissMethod {
+  case tap
+  case swipe
+  public static func == (a: PinePGSDK.DismissMethod, b: PinePGSDK.DismissMethod) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public protocol HalfSheetPresentableProtocol : AnyObject {
+  var managedScrollView: UIKit.UIScrollView? { get }
+  var dismissMethod: [PinePGSDK.DismissMethod] { get }
+  var sheetHeight: CoreGraphics.CGFloat? { get }
+}
+public protocol HalfSheetTopVCProviderProtocol : AnyObject {
+  var topVC: UIKit.UIViewController { get }
+  var topVCTransitionStyle: PinePGSDK.HalfSheetTopVCTransitionStyle { get }
+}
+public protocol HalfSheetCompletionProtocol : AnyObject {
+  func didDismiss()
+}
+public protocol HalfSheetAppearanceProtocol : AnyObject {
+  var cornerRadius: CoreGraphics.CGFloat { get }
+}
+extension HalfSheetPresentableProtocol where Self : UIKit.UIViewController {
+  public func didUpdateSheetHeight()
+}
+public class Order {
+  public init()
+  public func setUniqueMerchantTxnId(uniqueMerchantTxnId: Swift.String) -> PinePGSDK.Order
+  public func setAmountInPaise(amountInPaise: Swift.Int64) -> PinePGSDK.Order
+  public func setMerchantId(merchantId: Swift.Int) -> PinePGSDK.Order
+  public func setMerchantAccessCode(merchantAccessCode: Swift.String) -> PinePGSDK.Order
+  public func setNavigationMode(navigationMode: Swift.Int) -> PinePGSDK.Order
+  public func setTransactionType(transactionType: Swift.Int) -> PinePGSDK.Order
+  public func setSequenceId(sequenceId: Swift.Int) -> PinePGSDK.Order
+  public func setProductCode(productCode: Swift.String) -> PinePGSDK.Order
+  public func setMerchantUrl(merchantUrl: Swift.String) -> PinePGSDK.Order
+  public func setPayModeOnLandingPage(payModeOnLandingPage: Swift.String) -> PinePGSDK.Order
+  public func setCustomerEmail(customerEmail: Swift.String) -> PinePGSDK.Order
+  public func setCustomerMobileNo(customerMobileNo: Swift.String) -> PinePGSDK.Order
+  public func setCustomerId(customerId: Swift.String) -> PinePGSDK.Order
+  public func setCustomerAddress(customerAddress: Swift.String) -> PinePGSDK.Order
+  public func setCustomerAddressPin(customerAddressPin: Swift.String) -> PinePGSDK.Order
+  public func setUdfField1(udfField1: Swift.String) -> PinePGSDK.Order
+  public func setUdfField2(udfField2: Swift.String) -> PinePGSDK.Order
+  public func setUdfField3(udfField3: Swift.String) -> PinePGSDK.Order
+  public func setUdfField4(udfField4: Swift.String) -> PinePGSDK.Order
+  public func setDiaSecret(diaSecret: Swift.String) -> PinePGSDK.Order
+  public func setDiaSecretType(diaSecretType: Swift.String) -> PinePGSDK.Order
+  public func setRequestAgent(requestAgent: Swift.Int) -> PinePGSDK.Order
+  public func getUniqueMerchantTxnId() -> Swift.String
+  public func getAmountInPaise() -> Swift.Int64
+  public func getMerchantId() -> Swift.Int
+  public func getMerchantAccessCode() -> Swift.String
+  public func getNavigationMode() -> Swift.Int
+  public func getTransactionType() -> Swift.Int
+  public func getSequenceId() -> Swift.Int
+  public func getProductCode() -> Swift.String
+  public func getMerchantUrl() -> Swift.String
+  public func getPayModeOnLandingPage() -> Swift.String
+  public func getCustomerEmail() -> Swift.String
+  public func getCustomerMobileNo() -> Swift.String
+  public func getCustomerId() -> Swift.String
+  public func getCustomerAddress() -> Swift.String
+  public func getCustomerAddressPin() -> Swift.String
+  public func getUdfField1() -> Swift.String
+  public func getUdfField2() -> Swift.String
+  public func getUdfField3() -> Swift.String
+  public func getUdfField4() -> Swift.String
+  public func getDiaSecret() -> Swift.String
+  public func getDiaSecretType() -> Swift.String
+  public func getRequestAgent() -> Swift.Int
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class VerticalPanGestureRecognizer : UIKit.UIPanGestureRecognizer {
+  @objc override dynamic public func touchesMoved(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent)
+  @objc deinit
+  @objc override dynamic public init(target: Any?, action: ObjectiveC.Selector?)
+}
+final public class ActivityData {
+  public init(size: CoreGraphics.CGSize? = nil, message: Swift.String? = nil, messageFont: UIKit.UIFont? = nil, messageSpacing: CoreGraphics.CGFloat? = nil, type: PinePGSDK.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreGraphics.CGFloat? = nil, displayTimeThreshold: Swift.Int? = nil, minimumDisplayTime: Swift.Int? = nil, backgroundColor: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers final public class NVActivityIndicatorPresenter {
+  public static let sharedInstance: PinePGSDK.NVActivityIndicatorPresenter
+  final public func startAnimating(_ data: PinePGSDK.ActivityData)
+  final public func stopAnimating()
+  final public func setMessage(_ message: Swift.String?)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class PaymentResponseConstants : ObjectiveC.NSObject {
+  public static let UNIQUE_MERCHANT_TXN_ID: Swift.String
+  public static let MERCHANT_ID: Swift.String
+  public static let AMOUNT: Swift.String
+  public static let MERCHANT_ACCESS_CODE: Swift.String
+  public static let NAVIGATION_MODE: Swift.String
+  public static let TRANSACTION_TYPE: Swift.String
+  public static let SEQUENCE_ID: Swift.String
+  public static let PRODUCT_CODE: Swift.String
+  public static let MERCHANT_RETURN_URL: Swift.String
+  public static let PAYMENT_MODE_LOANDING_PAGE: Swift.String
+  public static let CUSTOMER_EMAIL: Swift.String
+  public static let CUSTOMER_MOBILE_NO: Swift.String
+  public static let CUSTOMER_ID: Swift.String
+  public static let CUSTOMER_ADDRESS: Swift.String
+  public static let CUSTOMER_ADDRESS_PIN: Swift.String
+  public static let DIA_SECRET: Swift.String
+  public static let DIA_SECRET_TYPE: Swift.String
+  @objc deinit
+  @objc override dynamic public init()
+}
+@objc public class PresentationViewController : UIKit.UIPresentationController {
+  public init(presentedViewController: UIKit.UIViewController, presentingViewController: UIKit.UIViewController?, manager: PinePGSDK.HalfSheetPresentationManager)
+  public func updateSheetHeight()
+  @objc override dynamic public func presentationTransitionWillBegin()
+  @objc override dynamic public func dismissalTransitionDidEnd(_ completed: Swift.Bool)
+  @objc override dynamic public var shouldPresentInFullscreen: Swift.Bool {
+    @objc get
+  }
+  @objc deinit
+  @objc override dynamic public init(presentedViewController: UIKit.UIViewController, presenting presentingViewController: UIKit.UIViewController?)
+}
+extension PresentationViewController : UIKit.UINavigationControllerDelegate {
+  @objc dynamic public func navigationController(_ navigationController: UIKit.UINavigationController, didShow viewController: UIKit.UIViewController, animated: Swift.Bool)
+}
+@objc @_inheritsConvenienceInitializers @UIApplicationMain public class AppDelegate : UIKit.UIResponder, UIKit.UIApplicationDelegate {
+  @objc public var window: UIKit.UIWindow?
+  @objc public func application(_ application: UIKit.UIApplication, didFinishLaunchingWithOptions launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?) -> Swift.Bool
+  @objc public func applicationWillResignActive(_ application: UIKit.UIApplication)
+  @objc public func applicationDidEnterBackground(_ application: UIKit.UIApplication)
+  @objc public func applicationWillEnterForeground(_ application: UIKit.UIApplication)
+  @objc public func applicationDidBecomeActive(_ application: UIKit.UIApplication)
+  @objc public func applicationWillTerminate(_ application: UIKit.UIApplication)
+  @objc deinit
+  @objc override dynamic public init()
+}
+@_hasMissingDesignatedInitializers public class PinePGConfig {
+  final public let strForm: Foundation.NSMutableString
+  public static let PINE_PG_PAYMENT_URL_TEST_SANDBOX: Swift.String
+  public static let PINE_PG_RETURN_URL_TEST_SANDBOX: Swift.String
+  public static let PINE_PG_PAYMENT_URL_PRODUCTION: Swift.String
+  public static let PINE_PG_RETURN_URL_PRODUCTION: Swift.String
+  public static let PINE_PG_PAYMENT_URL_SANDBOX: Swift.String
+  public static let PINE_PG_RETURN_URL_SANDBOX: Swift.String
+  public static let IS_REQUEST_FROM_APP: Swift.String
+  public static func createRequestForPinePG(environment: Swift.Int) -> Swift.String
+  public static func checkNullAndEmpty(paramValue: Swift.String) -> Swift.Bool
+  @objc deinit
+}
+@objc public protocol iProgressHUDDelegete {
+  @objc optional func onTouch(view: UIKit.UIView)
+  @objc optional func onShow(view: UIKit.UIView)
+  @objc optional func onDismiss(view: UIKit.UIView)
+}
+public class PinePGPaymentManager {
+  public init()
+  public static func startPayment(pinePGPaymentParam: Swift.Dictionary<Swift.String, Swift.String>, Context ctx: UIKit.UIViewController, themeId: Swift.Int, isHeaderShown: Swift.Bool, Enviroment: Swift.Int, pinePGResponseCallback: PinePGSDK.IPinePGResponseCallback)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class Hashing_Algorithm {
+  public static func GenerateHash(requestMap: Swift.Dictionary<Swift.String, Swift.String>, strSecretKey: Swift.String, strHashType: Swift.String) -> Swift.String
+  @objc deinit
+}
+public enum NVActivityIndicatorType : Swift.Int {
+  case blank
+  case ballPulse
+  case ballGridPulse
+  case ballClipRotate
+  case squareSpin
+  case ballClipRotatePulse
+  case ballClipRotateMultiple
+  case ballPulseRise
+  case ballRotate
+  case cubeTransition
+  case ballZigZag
+  case ballZigZagDeflect
+  case ballTrianglePath
+  case ballScale
+  case lineScale
+  case lineScaleParty
+  case ballScaleMultiple
+  case ballPulseSync
+  case ballBeat
+  case lineScalePulseOut
+  case lineScalePulseOutRapid
+  case ballScaleRipple
+  case ballScaleRippleMultiple
+  case ballSpinFadeLoader
+  case lineSpinFadeLoader
+  case triangleSkewSpin
+  case pacman
+  case ballGridBeat
+  case semiCircleSpin
+  case ballRotateChase
+  case orbit
+  case audioEqualizer
+  case circleStrokeSpin
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+}
+@objc final public class NVActivityIndicatorView : UIKit.UIView {
+  public static var DEFAULT_TYPE: PinePGSDK.NVActivityIndicatorType
+  public static var DEFAULT_COLOR: UIKit.UIColor
+  public static var DEFAULT_TEXT_COLOR: UIKit.UIColor
+  public static var DEFAULT_PADDING: CoreGraphics.CGFloat
+  public static var DEFAULT_BLOCKER_SIZE: CoreGraphics.CGSize
+  public static var DEFAULT_BLOCKER_DISPLAY_TIME_THRESHOLD: Swift.Int
+  public static var DEFAULT_BLOCKER_MINIMUM_DISPLAY_TIME: Swift.Int
+  public static var DEFAULT_BLOCKER_MESSAGE: Swift.String?
+  public static var DEFAULT_BLOCKER_MESSAGE_SPACING: CoreGraphics.CGFloat
+  public static var DEFAULT_BLOCKER_MESSAGE_FONT: UIKit.UIFont
+  public static var DEFAULT_BLOCKER_BACKGROUND_COLOR: UIKit.UIColor
+  final public var type: PinePGSDK.NVActivityIndicatorType
+  @objc @IBInspectable final public var color: UIKit.UIColor
+  @objc @IBInspectable final public var padding: CoreGraphics.CGFloat
+  final public var animating: Swift.Bool {
+    get
+  }
+  final public var isAnimating: Swift.Bool {
+    get
+  }
+  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  public init(frame: CoreGraphics.CGRect, type: PinePGSDK.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreGraphics.CGFloat? = nil)
+  @objc override final public var intrinsicContentSize: CoreGraphics.CGSize {
+    @objc get
+  }
+  @objc override final public var bounds: CoreGraphics.CGRect {
+    @objc get
+    @objc set
+  }
+  final public func startAnimating()
+  final public func stopAnimating()
+  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @objc deinit
+}
+extension UIViewController {
+  public func ToastMessages(msg: Swift.String, Context ctx: UIKit.UIViewController)
+}
+public protocol HalfSheetPresentingProtocol : AnyObject {
+  var transitionManager: PinePGSDK.HalfSheetPresentationManager! { get set }
+}
+extension HalfSheetPresentingProtocol where Self : UIKit.UIViewController {
+  public func presentUsingHalfSheet(_ vc: UIKit.UIViewController, animated: Swift.Bool = true)
+  @discardableResult
+  public func presentUsingHalfSheetInNC(_ vc: UIKit.UIViewController, animated: Swift.Bool = true) -> UIKit.UINavigationController
+}
+@_hasMissingDesignatedInitializers public class PaymentParamsConstants {
+  public static let UNIQUE_MERCHANT_TXN_ID: Swift.String
+  public static let MERCHANT_ID: Swift.String
+  public static let AMOUNT: Swift.String
+  public static let MERCHANT_ACCESS_CODE: Swift.String
+  public static let NAVIGATION_MODE: Swift.String
+  public static let TRANSACTION_TYPE: Swift.String
+  public static let SEQUENCE_ID: Swift.String
+  public static let PRODUCT_CODE: Swift.String
+  public static let MERCHANT_RETURN_URL: Swift.String
+  public static let PAYMENT_MODE_LOANDING_PAGE: Swift.String
+  public static let CUSTOMER_EMAIL: Swift.String
+  public static let CUSTOMER_MOBILE_NO: Swift.String
+  public static let CUSTOMER_ID: Swift.String
+  public static let CUSTOMER_ADDRESS: Swift.String
+  public static let CUSTOMER_ADDRESS_PIN: Swift.String
+  public static let DIA_SECRET: Swift.String
+  public static let DIA_SECRET_TYPE: Swift.String
+  public static let UDF_FIELD1: Swift.String
+  public static let UDF_FIELD2: Swift.String
+  public static let UDF_FIELD3: Swift.String
+  public static let UDF_FIELD4: Swift.String
+  public static let REQUEST_AGENT: Swift.String
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class HalfSheetPresentationManager : ObjectiveC.NSObject, UIKit.UIGestureRecognizerDelegate {
+  public var dismissingPanGesture: PinePGSDK.VerticalPanGestureRecognizer {
+    get
+  }
+  public var contentDismissingPanGesture: UIKit.UIPanGestureRecognizer {
+    get
+  }
+  public var backgroundViewDismissTrigger: UIKit.UITapGestureRecognizer {
+    get
+  }
+  @objc override dynamic public init()
+  public func updateForScrollPosition(yOffset: CoreGraphics.CGFloat)
+  public func didChangeSheetHeight()
+  @objc deinit
+}
+extension HalfSheetPresentationManager : UIKit.UIViewControllerTransitioningDelegate {
+  @objc dynamic public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @objc dynamic public func interactionControllerForDismissal(using animator: UIKit.UIViewControllerAnimatedTransitioning) -> UIKit.UIViewControllerInteractiveTransitioning?
+  @objc dynamic public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
+}
+public protocol NVActivityIndicatorViewable {
+}
+extension NVActivityIndicatorViewable where Self : UIKit.UIViewController {
+  public func startAnimating(_ size: CoreGraphics.CGSize? = nil, message: Swift.String? = nil, messageFont: UIKit.UIFont? = nil, type: PinePGSDK.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreGraphics.CGFloat? = nil, displayTimeThreshold: Swift.Int? = nil, minimumDisplayTime: Swift.Int? = nil, backgroundColor: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil)
+  public func stopAnimating()
+}
+extension PinePGSDK.iProgressHUDStyles : Swift.Equatable {}
+extension PinePGSDK.iProgressHUDStyles : Swift.Hashable {}
+extension PinePGSDK.HalfSheetTopVCTransitionStyle : Swift.Equatable {}
+extension PinePGSDK.HalfSheetTopVCTransitionStyle : Swift.Hashable {}
+extension PinePGSDK.DismissMethod : Swift.Equatable {}
+extension PinePGSDK.DismissMethod : Swift.Hashable {}
+extension PinePGSDK.NVActivityIndicatorType : Swift.Equatable {}
+extension PinePGSDK.NVActivityIndicatorType : Swift.Hashable {}
+extension PinePGSDK.NVActivityIndicatorType : Swift.RawRepresentable {}
