@@ -6,7 +6,7 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		nqw0GTwImrmKuC7LWAJ68c5uIYM=
+		r6gSvnMOvcyPCVRBNdUR3wbmha8=
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -14,7 +14,7 @@
 		</data>
 		<key>Base.lproj/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		SBu0rq7FsdLDBeBqBWoDJ7lgf/Y=
+		U0x8EM0781fCPb62BbZIXKeDlZ4=
 		</data>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
 		<data>
@@ -22,23 +22,23 @@
 		</data>
 		<key>Base.lproj/Main.storyboardc/LMq-WW-A0A-view-gXc-Ug-H6e.nib</key>
 		<data>
-		O/QOMQbpe34go61cshTck4Hp3gU=
+		jMIl+6SAYSPlHRwWekEK6VM11JM=
 		</data>
 		<key>Base.lproj/Main.storyboardc/PinePGPaymentActivity.nib</key>
 		<data>
-		toH+zxMwIKz+19wEHORE4kj7NuI=
+		2o/7LCbz0VLAFP4TkDtx+/WcN7k=
 		</data>
 		<key>Base.lproj/Main.storyboardc/ViewController.nib</key>
 		<data>
-		Xtfn9xJyc/Y5flmoVNXTpsIMolw=
+		RTxKeJPRLwDKFzHTSNm515JG/+A=
 		</data>
 		<key>Base.lproj/Main.storyboardc/rYs-hn-jRW-view-ylQ-Hv-7WO.nib</key>
 		<data>
-		wliGLzyWXgLvyI8QdZv90JdkMMg=
+		RCqD7V1iXm96sUzTNEfLPRThYME=
 		</data>
 		<key>DismissBar.storyboardc/DismissBarVC.nib</key>
 		<data>
-		eN7BZIBPTRz2fwZpkEaFFbe+Kq4=
+		37w5Dxir6qFOu/jkb9TnP6RbqWc=
 		</data>
 		<key>DismissBar.storyboardc/Info.plist</key>
 		<data>
@@ -46,7 +46,7 @@
 		</data>
 		<key>DismissBar.storyboardc/h5B-fa-pnc-view-YGM-in-2Br.nib</key>
 		<data>
-		ipWE4cEM9z6NGZX/iUbqz4jqwp0=
+		UP0QQg2n1PsApWQZYp+yNFltZ8E=
 		</data>
 		<key>Headers/GTSheet.h</key>
 		<data>
@@ -62,7 +62,7 @@
 		</data>
 		<key>Headers/PinePGSDK-Swift.h</key>
 		<data>
-		KbFsq5w1haiIseqz12zBxXLckuY=
+		n/1gr1a0u4Ya+Ss9TJgZEQsnN9o=
 		</data>
 		<key>Headers/PinePGSDK.h</key>
 		<data>
@@ -78,31 +78,55 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		mFBtbHwdL9LN6Un7Y6xWSeXj+Q4=
+		CQE2LlbhDQsZXsZGsd1bhPJMA88=
+		</data>
+		<key>Modules/PinePGSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
+		<data>
+		5mqqhKZNtgfniEXiWmmuatYLZQE=
+		</data>
+		<key>Modules/PinePGSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
+		<data>
+		aVs/XlM0/2C5yVkSK+NeoyzsnYw=
+		</data>
+		<key>Modules/PinePGSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
+		<data>
+		+uvdnn4r2hszfjnD7l/+aNX0G7k=
+		</data>
+		<key>Modules/PinePGSDK.swiftmodule/arm64.swiftdoc</key>
+		<data>
+		5mqqhKZNtgfniEXiWmmuatYLZQE=
+		</data>
+		<key>Modules/PinePGSDK.swiftmodule/arm64.swiftinterface</key>
+		<data>
+		aVs/XlM0/2C5yVkSK+NeoyzsnYw=
+		</data>
+		<key>Modules/PinePGSDK.swiftmodule/arm64.swiftmodule</key>
+		<data>
+		+uvdnn4r2hszfjnD7l/+aNX0G7k=
 		</data>
 		<key>Modules/PinePGSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		y+p1cWiGGBB30LfrF3K32Jng3+Y=
+		jxhxmCSiYbNQkmR05egK5xwb+VQ=
 		</data>
 		<key>Modules/PinePGSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		6V1S0G69bwcAJrq+u2DsSyZA7Wk=
+		wdDZlx+tM2PsdH7FqRJKZvjMhLc=
 		</data>
 		<key>Modules/PinePGSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		vfiSVBA+FkDML1+2YVeuu1vqYHw=
+		njjjgCVvxakHEbsbsTi2TUNc/HU=
 		</data>
 		<key>Modules/PinePGSDK.swiftmodule/x86_64.swiftdoc</key>
 		<data>
-		y+p1cWiGGBB30LfrF3K32Jng3+Y=
+		jxhxmCSiYbNQkmR05egK5xwb+VQ=
 		</data>
 		<key>Modules/PinePGSDK.swiftmodule/x86_64.swiftinterface</key>
 		<data>
-		6V1S0G69bwcAJrq+u2DsSyZA7Wk=
+		wdDZlx+tM2PsdH7FqRJKZvjMhLc=
 		</data>
 		<key>Modules/PinePGSDK.swiftmodule/x86_64.swiftmodule</key>
 		<data>
-		vfiSVBA+FkDML1+2YVeuu1vqYHw=
+		njjjgCVvxakHEbsbsTi2TUNc/HU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -115,7 +139,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3PRHYBh6k0NdtxIq21Q76blURCI/CdQCNHBjCvy6HK4=
+			EOmrbyEILYHXDMeAOH9FK9GxNMd53+mIQ7DWaqLqiKM=
 			</data>
 		</dict>
 		<key>Base.lproj/LaunchScreen.storyboardc/Info.plist</key>
@@ -129,7 +153,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			uqQBShVwZ+HxElNHpy+HWfzuOBxRWeFkQ85jhZOJgA0=
+			cWq7q+iQcmpSoaFGecnyPdKFEPFwRD3slgUmxFADkVs=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/Info.plist</key>
@@ -143,35 +167,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Gv8sTRsC90FYlsc1zGOciwNG3+xxPUJTXY6RU7LEDOI=
+			PJWTiEuhS+uWyY9RMSguniE618FclgqK3719KZEhGdg=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/PinePGPaymentActivity.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8ykDcesyfiH9S7nlOqPb9C4djRrqrb4qB5dUeQVAkLU=
+			OkKFYtQRMc9DbbU1zfsc9rghrDIwS5kTol1xV61TfhY=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/ViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			orxR4UxdeTAatLlqNZ7dSClbO8NxFETCdMDI9ORQTOU=
+			i+kfjSmEu7CPnx0I8McCRt5VSuiHdRA9bGe0anbX66s=
 			</data>
 		</dict>
 		<key>Base.lproj/Main.storyboardc/rYs-hn-jRW-view-ylQ-Hv-7WO.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xQgnrE6vo4CsJIZFfI8kj/0InkkT4wpuUjPs9UwV6jM=
+			fO6vzEPcAvGmwpY8GKAVEPR9d03dHY1b16t6YJIeNlM=
 			</data>
 		</dict>
 		<key>DismissBar.storyboardc/DismissBarVC.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mParKPJD0iEjIH4mpmoAGTKb5CclnhfQ5SbZ8daZG7k=
+			5shw+ANusRWjCiAm1SVv3UN3ie/fBm1Ek4JKsOv/W24=
 			</data>
 		</dict>
 		<key>DismissBar.storyboardc/Info.plist</key>
@@ -185,7 +209,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DplLd7rdlXBW4Qvo4ehwapr9igcGE1TqMvJ057DqJhQ=
+			o246aOSq0Qz7XNlPtbcWtJH3P2Ys/fqjR54X9ZsS10c=
 			</data>
 		</dict>
 		<key>Headers/GTSheet.h</key>
@@ -213,7 +237,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OOTWqo/n7xDi/JRbkUVyjFokpBLQ/sDn5KvgMayJvpc=
+			pM3aepsqi5jPQaKyfxIzqZf/b4n3NbbfVBMW9iAA/o4=
 			</data>
 		</dict>
 		<key>Headers/PinePGSDK.h</key>
@@ -237,46 +261,88 @@
 			yk3HXdrUj+ePTSzjwr369HYAuSQ82ERghSIESTfIFPQ=
 			</data>
 		</dict>
+		<key>Modules/PinePGSDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+jRiLKOqHd+9+Thr95M8pMh9e35GgFVXNkn1+SpfJcc=
+			</data>
+		</dict>
+		<key>Modules/PinePGSDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RW4sCFC3/Rrxtet0xvbf7VCfr2piCcXLwIJlxPpAcn4=
+			</data>
+		</dict>
+		<key>Modules/PinePGSDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fAbuDUd8hyqZBSc2s5D+Zmq20x9Ao06SPa5vM2xIV/o=
+			</data>
+		</dict>
+		<key>Modules/PinePGSDK.swiftmodule/arm64.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+jRiLKOqHd+9+Thr95M8pMh9e35GgFVXNkn1+SpfJcc=
+			</data>
+		</dict>
+		<key>Modules/PinePGSDK.swiftmodule/arm64.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RW4sCFC3/Rrxtet0xvbf7VCfr2piCcXLwIJlxPpAcn4=
+			</data>
+		</dict>
+		<key>Modules/PinePGSDK.swiftmodule/arm64.swiftmodule</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			fAbuDUd8hyqZBSc2s5D+Zmq20x9Ao06SPa5vM2xIV/o=
+			</data>
+		</dict>
 		<key>Modules/PinePGSDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AwnddOfwb2AeY77s0bn4SoHw7wNKke0gbt3lmspVOTM=
+			kZKZWtAHNODd8K0cbTlY/4fGxUQqDSisE+Tk4nLxzug=
 			</data>
 		</dict>
 		<key>Modules/PinePGSDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q/E8HR64mvl2EIxU3B8HZ3GEsrzg34WY2dXz5WuNvWY=
+			MwIcy4NVA2dWy17GfHJcXR1zcsIETEufghq9LbvfPXk=
 			</data>
 		</dict>
 		<key>Modules/PinePGSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WyGIKusLA/HL16cP8Sjh1F6lW8gvz5V8S6+JvoWG/1U=
+			QVzvrKfTBPHArD3hz9dBs0+1d94YG3KJX5WDzj9xWUc=
 			</data>
 		</dict>
 		<key>Modules/PinePGSDK.swiftmodule/x86_64.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AwnddOfwb2AeY77s0bn4SoHw7wNKke0gbt3lmspVOTM=
+			kZKZWtAHNODd8K0cbTlY/4fGxUQqDSisE+Tk4nLxzug=
 			</data>
 		</dict>
 		<key>Modules/PinePGSDK.swiftmodule/x86_64.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q/E8HR64mvl2EIxU3B8HZ3GEsrzg34WY2dXz5WuNvWY=
+			MwIcy4NVA2dWy17GfHJcXR1zcsIETEufghq9LbvfPXk=
 			</data>
 		</dict>
 		<key>Modules/PinePGSDK.swiftmodule/x86_64.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WyGIKusLA/HL16cP8Sjh1F6lW8gvz5V8S6+JvoWG/1U=
+			QVzvrKfTBPHArD3hz9dBs0+1d94YG3KJX5WDzj9xWUc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

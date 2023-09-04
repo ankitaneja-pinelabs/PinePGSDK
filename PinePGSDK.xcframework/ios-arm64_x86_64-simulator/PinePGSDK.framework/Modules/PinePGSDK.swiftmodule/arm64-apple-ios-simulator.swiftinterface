@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2 effective-4.2 (swiftlang-1103.0.32.1 clang-1103.0.32.29)
-// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name PinePGSDK
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PinePGSDK
 import CommonCrypto
 import Foundation
 import Network
@@ -11,6 +11,7 @@ import SystemConfiguration
 import UIKit.UIGestureRecognizerSubclass
 import UIKit
 import WebKit
+import _Concurrency
 @_hasMissingDesignatedInitializers final public class Toas {
   final public var backgroundColor: UIKit.UIColor
   final public var font: UIKit.UIFont
@@ -66,17 +67,17 @@ import WebKit
   public static let PINE_PG_RETURN_URL: Swift.String
   public static let FORM_POST_MERCHANT_RETURN_URL_TAG: Swift.String
   public static let BACK_PRESS_BUTTON: Swift.String
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
 public enum iProgressHUDStyles {
   case vertical
   case horizontal
   public static func == (a: PinePGSDK.iProgressHUDStyles, b: PinePGSDK.iProgressHUDStyles) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 open class iProgressHUD {
   open var indicatorStyle: PinePGSDK.NVActivityIndicatorType
@@ -114,54 +115,53 @@ open class iProgressHUD {
   open func dismiss()
   @objc deinit
 }
-@objc public class DismissalAnimator : UIKit.UIPercentDrivenInteractiveTransition, UIKit.UIViewControllerAnimatedTransitioning {
-  public init(manager: PinePGSDK.HalfSheetPresentationManager)
-  @objc public func transitionDuration(using transitionContext: UIKit.UIViewControllerContextTransitioning?) -> Foundation.TimeInterval
-  @objc public func interruptibleAnimator(using transitionContext: UIKit.UIViewControllerContextTransitioning) -> UIKit.UIViewImplicitlyAnimating
-  @objc public func animateTransition(using transitionContext: UIKit.UIViewControllerContextTransitioning)
-  @objc override dynamic public func cancel()
-  @objc override dynamic public func finish()
-  @objc override dynamic public func update(_ percentComplete: CoreGraphics.CGFloat)
+@objc @_Concurrency.MainActor(unsafe) public class DismissalAnimator : UIKit.UIPercentDrivenInteractiveTransition, UIKit.UIViewControllerAnimatedTransitioning {
+  @_Concurrency.MainActor(unsafe) public init(manager: PinePGSDK.HalfSheetPresentationManager)
+  @_Concurrency.MainActor(unsafe) @objc public func transitionDuration(using transitionContext: UIKit.UIViewControllerContextTransitioning?) -> Foundation.TimeInterval
+  @_Concurrency.MainActor(unsafe) @objc public func interruptibleAnimator(using transitionContext: UIKit.UIViewControllerContextTransitioning) -> UIKit.UIViewImplicitlyAnimating
+  @_Concurrency.MainActor(unsafe) @objc public func animateTransition(using transitionContext: UIKit.UIViewControllerContextTransitioning)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func cancel()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func finish()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func update(_ percentComplete: CoreGraphics.CGFloat)
   @objc deinit
-  @objc override dynamic public init()
 }
-extension UIView {
-  public func showProgress()
-  public func dismissProgress()
-  public func updateIndicator(style: PinePGSDK.NVActivityIndicatorType)
-  public func updateCaption(text: Swift.String)
-  public func updateColors(modalColor: UIKit.UIColor?, boxColor: UIKit.UIColor?, indicatorColor: UIKit.UIColor?, captionColor: UIKit.UIColor?)
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func showProgress()
+  @_Concurrency.MainActor(unsafe) public func dismissProgress()
+  @_Concurrency.MainActor(unsafe) public func updateIndicator(style: PinePGSDK.NVActivityIndicatorType)
+  @_Concurrency.MainActor(unsafe) public func updateCaption(text: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func updateColors(modalColor: UIKit.UIColor?, boxColor: UIKit.UIColor?, indicatorColor: UIKit.UIColor?, captionColor: UIKit.UIColor?)
 }
-@objc @_inheritsConvenienceInitializers public class DismissBarVC : UIKit.UIViewController {
-  public static func instance(tintColor: UIKit.UIColor) -> PinePGSDK.DismissBarVC
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class DismissBarVC : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public static func instance(tintColor: UIKit.UIColor) -> PinePGSDK.DismissBarVC
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
-  @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
-  @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
-public protocol IPinePGResponseCallback {
-  func internetNotAvailable(code: Swift.Int, message: Swift.String)
-  func onErrorOccured(code: Swift.Int, message: Swift.String)
-  func onTransactionResponse()
-  func onCancelTxn(code: Swift.Int, message: Swift.String)
-  func onPressedBackButton(code: Swift.Int, message: Swift.String)
+@objc public protocol IPinePGResponseCallback {
+  @objc func internetNotAvailable(code: Swift.Int, message: Swift.String)
+  @objc func onErrorOccured(code: Swift.Int, message: Swift.String)
+  @objc func onTransactionResponse()
+  @objc func onCancelTxn(code: Swift.Int, message: Swift.String)
+  @objc func onPressedBackButton(code: Swift.Int, message: Swift.String)
 }
 public enum HalfSheetTopVCTransitionStyle {
   case slide
   case fade
   public static func == (a: PinePGSDK.HalfSheetTopVCTransitionStyle, b: PinePGSDK.HalfSheetTopVCTransitionStyle) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public enum DismissMethod {
   case tap
   case swipe
   public static func == (a: PinePGSDK.DismissMethod, b: PinePGSDK.DismissMethod) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
-  public func hash(into hasher: inout Swift.Hasher)
 }
 public protocol HalfSheetPresentableProtocol : AnyObject {
   var managedScrollView: UIKit.UIScrollView? { get }
@@ -178,11 +178,12 @@ public protocol HalfSheetCompletionProtocol : AnyObject {
 public protocol HalfSheetAppearanceProtocol : AnyObject {
   var cornerRadius: CoreGraphics.CGFloat { get }
 }
-extension HalfSheetPresentableProtocol where Self : UIKit.UIViewController {
+extension PinePGSDK.HalfSheetPresentableProtocol where Self : UIKit.UIViewController {
   public func didUpdateSheetHeight()
 }
 public class Order {
   public init()
+  public func setMulticartDetails(multicardDetails: Swift.String) -> PinePGSDK.Order
   public func setUniqueMerchantTxnId(uniqueMerchantTxnId: Swift.String) -> PinePGSDK.Order
   public func setAmountInPaise(amountInPaise: Swift.Int64) -> PinePGSDK.Order
   public func setMerchantId(merchantId: Swift.Int) -> PinePGSDK.Order
@@ -227,12 +228,13 @@ public class Order {
   public func getDiaSecret() -> Swift.String
   public func getDiaSecretType() -> Swift.String
   public func getRequestAgent() -> Swift.Int
+  public func getMulticartDetails() -> Swift.String
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers public class VerticalPanGestureRecognizer : UIKit.UIPanGestureRecognizer {
-  @objc override dynamic public func touchesMoved(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent)
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class VerticalPanGestureRecognizer : UIKit.UIPanGestureRecognizer {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func touchesMoved(_ touches: Swift.Set<UIKit.UITouch>, with event: UIKit.UIEvent)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(target: Any?, action: ObjectiveC.Selector?)
   @objc deinit
-  @objc override dynamic public init(target: Any?, action: ObjectiveC.Selector?)
 }
 final public class ActivityData {
   public init(size: CoreGraphics.CGSize? = nil, message: Swift.String? = nil, messageFont: UIKit.UIFont? = nil, messageSpacing: CoreGraphics.CGFloat? = nil, type: PinePGSDK.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreGraphics.CGFloat? = nil, displayTimeThreshold: Swift.Int? = nil, minimumDisplayTime: Swift.Int? = nil, backgroundColor: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil)
@@ -263,33 +265,32 @@ final public class ActivityData {
   public static let CUSTOMER_ADDRESS_PIN: Swift.String
   public static let DIA_SECRET: Swift.String
   public static let DIA_SECRET_TYPE: Swift.String
-  @objc deinit
   @objc override dynamic public init()
+  @objc deinit
 }
-@objc public class PresentationViewController : UIKit.UIPresentationController {
-  public init(presentedViewController: UIKit.UIViewController, presentingViewController: UIKit.UIViewController?, manager: PinePGSDK.HalfSheetPresentationManager)
-  public func updateSheetHeight()
-  @objc override dynamic public func presentationTransitionWillBegin()
-  @objc override dynamic public func dismissalTransitionDidEnd(_ completed: Swift.Bool)
-  @objc override dynamic public var shouldPresentInFullscreen: Swift.Bool {
-    @objc get
+@objc @_Concurrency.MainActor(unsafe) public class PresentationViewController : UIKit.UIPresentationController {
+  @_Concurrency.MainActor(unsafe) public init(presentedViewController: UIKit.UIViewController, presentingViewController: UIKit.UIViewController?, manager: PinePGSDK.HalfSheetPresentationManager)
+  @_Concurrency.MainActor(unsafe) public func updateSheetHeight()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func presentationTransitionWillBegin()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func dismissalTransitionDidEnd(_ completed: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var shouldPresentInFullscreen: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
   @objc deinit
-  @objc override dynamic public init(presentedViewController: UIKit.UIViewController, presenting presentingViewController: UIKit.UIViewController?)
 }
-extension PresentationViewController : UIKit.UINavigationControllerDelegate {
-  @objc dynamic public func navigationController(_ navigationController: UIKit.UINavigationController, didShow viewController: UIKit.UIViewController, animated: Swift.Bool)
+extension PinePGSDK.PresentationViewController : UIKit.UINavigationControllerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func navigationController(_ navigationController: UIKit.UINavigationController, didShow viewController: UIKit.UIViewController, animated: Swift.Bool)
 }
-@objc @_inheritsConvenienceInitializers @UIApplicationMain public class AppDelegate : UIKit.UIResponder, UIKit.UIApplicationDelegate {
-  @objc public var window: UIKit.UIWindow?
-  @objc public func application(_ application: UIKit.UIApplication, didFinishLaunchingWithOptions launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?) -> Swift.Bool
-  @objc public func applicationWillResignActive(_ application: UIKit.UIApplication)
-  @objc public func applicationDidEnterBackground(_ application: UIKit.UIApplication)
-  @objc public func applicationWillEnterForeground(_ application: UIKit.UIApplication)
-  @objc public func applicationDidBecomeActive(_ application: UIKit.UIApplication)
-  @objc public func applicationWillTerminate(_ application: UIKit.UIApplication)
-  @objc deinit
+@objc @_inheritsConvenienceInitializers @UIApplicationMain @_Concurrency.MainActor(unsafe) public class AppDelegate : UIKit.UIResponder, UIKit.UIApplicationDelegate {
+  @_Concurrency.MainActor(unsafe) @objc public var window: UIKit.UIWindow?
+  @_Concurrency.MainActor(unsafe) @objc public func application(_ application: UIKit.UIApplication, didFinishLaunchingWithOptions launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc public func applicationWillResignActive(_ application: UIKit.UIApplication)
+  @_Concurrency.MainActor(unsafe) @objc public func applicationDidEnterBackground(_ application: UIKit.UIApplication)
+  @_Concurrency.MainActor(unsafe) @objc public func applicationWillEnterForeground(_ application: UIKit.UIApplication)
+  @_Concurrency.MainActor(unsafe) @objc public func applicationDidBecomeActive(_ application: UIKit.UIApplication)
+  @_Concurrency.MainActor(unsafe) @objc public func applicationWillTerminate(_ application: UIKit.UIApplication)
   @objc override dynamic public init()
+  @objc deinit
 }
 @_hasMissingDesignatedInitializers public class PinePGConfig {
   final public let strForm: Foundation.NSMutableString
@@ -352,54 +353,53 @@ public enum NVActivityIndicatorType : Swift.Int {
   case orbit
   case audioEqualizer
   case circleStrokeSpin
+  public init?(rawValue: Swift.Int)
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
   }
-  public init?(rawValue: Swift.Int)
 }
-@objc final public class NVActivityIndicatorView : UIKit.UIView {
-  public static var DEFAULT_TYPE: PinePGSDK.NVActivityIndicatorType
-  public static var DEFAULT_COLOR: UIKit.UIColor
-  public static var DEFAULT_TEXT_COLOR: UIKit.UIColor
-  public static var DEFAULT_PADDING: CoreGraphics.CGFloat
-  public static var DEFAULT_BLOCKER_SIZE: CoreGraphics.CGSize
-  public static var DEFAULT_BLOCKER_DISPLAY_TIME_THRESHOLD: Swift.Int
-  public static var DEFAULT_BLOCKER_MINIMUM_DISPLAY_TIME: Swift.Int
-  public static var DEFAULT_BLOCKER_MESSAGE: Swift.String?
-  public static var DEFAULT_BLOCKER_MESSAGE_SPACING: CoreGraphics.CGFloat
-  public static var DEFAULT_BLOCKER_MESSAGE_FONT: UIKit.UIFont
-  public static var DEFAULT_BLOCKER_BACKGROUND_COLOR: UIKit.UIColor
-  final public var type: PinePGSDK.NVActivityIndicatorType
-  @objc @IBInspectable final public var color: UIKit.UIColor
-  @objc @IBInspectable final public var padding: CoreGraphics.CGFloat
-  final public var animating: Swift.Bool {
+@objc @_Concurrency.MainActor(unsafe) final public class NVActivityIndicatorView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_TYPE: PinePGSDK.NVActivityIndicatorType
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_COLOR: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_TEXT_COLOR: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_PADDING: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_SIZE: CoreGraphics.CGSize
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_DISPLAY_TIME_THRESHOLD: Swift.Int
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_MINIMUM_DISPLAY_TIME: Swift.Int
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_MESSAGE: Swift.String?
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_MESSAGE_SPACING: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_MESSAGE_FONT: UIKit.UIFont
+  @_Concurrency.MainActor(unsafe) public static var DEFAULT_BLOCKER_BACKGROUND_COLOR: UIKit.UIColor
+  @_Concurrency.MainActor(unsafe) final public var type: PinePGSDK.NVActivityIndicatorType
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var color: UIKit.UIColor
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) final public var padding: CoreGraphics.CGFloat
+  @_Concurrency.MainActor(unsafe) final public var animating: Swift.Bool {
     get
   }
-  final public var isAnimating: Swift.Bool {
+  @_Concurrency.MainActor(unsafe) final public var isAnimating: Swift.Bool {
     get
   }
-  @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
-  public init(frame: CoreGraphics.CGRect, type: PinePGSDK.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreGraphics.CGFloat? = nil)
-  @objc override final public var intrinsicContentSize: CoreGraphics.CGSize {
-    @objc get
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public init(frame: CoreGraphics.CGRect, type: PinePGSDK.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreGraphics.CGFloat? = nil)
+  @_Concurrency.MainActor(unsafe) @objc override final public var intrinsicContentSize: CoreGraphics.CGSize {
+    @_Concurrency.MainActor(unsafe) @objc get
   }
-  @objc override final public var bounds: CoreGraphics.CGRect {
-    @objc get
-    @objc set
+  @_Concurrency.MainActor(unsafe) @objc override final public var bounds: CoreGraphics.CGRect {
+    @_Concurrency.MainActor(unsafe) @objc get
+    @_Concurrency.MainActor(unsafe) @objc set
   }
-  final public func startAnimating()
-  final public func stopAnimating()
-  @objc override dynamic public init(frame: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) final public func startAnimating()
+  @_Concurrency.MainActor(unsafe) final public func stopAnimating()
   @objc deinit
 }
-extension UIViewController {
-  public func ToastMessages(msg: Swift.String, Context ctx: UIKit.UIViewController)
+extension UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) public func ToastMessages(msg: Swift.String, Context ctx: UIKit.UIViewController)
 }
 public protocol HalfSheetPresentingProtocol : AnyObject {
   var transitionManager: PinePGSDK.HalfSheetPresentationManager! { get set }
 }
-extension HalfSheetPresentingProtocol where Self : UIKit.UIViewController {
+extension PinePGSDK.HalfSheetPresentingProtocol where Self : UIKit.UIViewController {
   public func presentUsingHalfSheet(_ vc: UIKit.UIViewController, animated: Swift.Bool = true)
   @discardableResult
   public func presentUsingHalfSheetInNC(_ vc: UIKit.UIViewController, animated: Swift.Bool = true) -> UIKit.UINavigationController
@@ -427,32 +427,33 @@ extension HalfSheetPresentingProtocol where Self : UIKit.UIViewController {
   public static let UDF_FIELD3: Swift.String
   public static let UDF_FIELD4: Swift.String
   public static let REQUEST_AGENT: Swift.String
+  public static let MULTICART_DETAILS: Swift.String
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers public class HalfSheetPresentationManager : ObjectiveC.NSObject, UIKit.UIGestureRecognizerDelegate {
-  public var dismissingPanGesture: PinePGSDK.VerticalPanGestureRecognizer {
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class HalfSheetPresentationManager : ObjectiveC.NSObject, UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor(unsafe) public var dismissingPanGesture: PinePGSDK.VerticalPanGestureRecognizer {
     get
   }
-  public var contentDismissingPanGesture: UIKit.UIPanGestureRecognizer {
+  @_Concurrency.MainActor(unsafe) public var contentDismissingPanGesture: UIKit.UIPanGestureRecognizer {
     get
   }
-  public var backgroundViewDismissTrigger: UIKit.UITapGestureRecognizer {
+  @_Concurrency.MainActor(unsafe) public var backgroundViewDismissTrigger: UIKit.UITapGestureRecognizer {
     get
   }
   @objc override dynamic public init()
-  public func updateForScrollPosition(yOffset: CoreGraphics.CGFloat)
-  public func didChangeSheetHeight()
+  @_Concurrency.MainActor(unsafe) public func updateForScrollPosition(yOffset: CoreGraphics.CGFloat)
+  @_Concurrency.MainActor(unsafe) public func didChangeSheetHeight()
   @objc deinit
 }
-extension HalfSheetPresentationManager : UIKit.UIViewControllerTransitioningDelegate {
-  @objc dynamic public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
-  @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
-  @objc dynamic public func interactionControllerForDismissal(using animator: UIKit.UIViewControllerAnimatedTransitioning) -> UIKit.UIViewControllerInteractiveTransitioning?
-  @objc dynamic public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
+extension PinePGSDK.HalfSheetPresentationManager : UIKit.UIViewControllerTransitioningDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func interactionControllerForDismissal(using animator: UIKit.UIViewControllerAnimatedTransitioning) -> UIKit.UIViewControllerInteractiveTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
 }
 public protocol NVActivityIndicatorViewable {
 }
-extension NVActivityIndicatorViewable where Self : UIKit.UIViewController {
+extension PinePGSDK.NVActivityIndicatorViewable where Self : UIKit.UIViewController {
   public func startAnimating(_ size: CoreGraphics.CGSize? = nil, message: Swift.String? = nil, messageFont: UIKit.UIFont? = nil, type: PinePGSDK.NVActivityIndicatorType? = nil, color: UIKit.UIColor? = nil, padding: CoreGraphics.CGFloat? = nil, displayTimeThreshold: Swift.Int? = nil, minimumDisplayTime: Swift.Int? = nil, backgroundColor: UIKit.UIColor? = nil, textColor: UIKit.UIColor? = nil)
   public func stopAnimating()
 }
